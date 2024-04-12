@@ -1,12 +1,28 @@
-from typing import Union
 from fastapi import FastAPI
+from typing import Union
 
 app = FastAPI()
 
-@app.get("/")
-def root():
-    return { "Hello": "World!"}
+name = "Default Name"
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/")
+def read_name():
+    return {"name": name}
+
+@app.post("/")
+def create_name(new_name: str):
+    global name
+    name = new_name
+    return {"name": name}
+
+@app.put("/")
+def update_name(new_name: str):
+    global name
+    name = new_name
+    return {"name": name}
+
+@app.delete("/")
+def delete_name():
+    global name
+    name = " "
+    return {"name": name}
