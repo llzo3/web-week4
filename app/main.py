@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    URL = "https://bigdata.kepco.co.kr/cmsmain.do?scode=S01&pcode=000167&pstate=L&redirect=Y"
+    URL = "https://bigdata.kepco.co.kr/openapi/v1/powerUsage/industryType.do?year=2020&month=11&metroCd=11&cityCd=110&bizCd=C&apiKey=4NJZM89F45s975GPowEIq1jYK2URj14t1p3ZBY92&returnType=json"
 
     contents = requests.get(URL).text
 
