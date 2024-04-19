@@ -4,8 +4,6 @@ import requests
 
 app = FastAPI()
 
-name = "Default Name"
-
 @app.get("/")
 def root():
     URL = "https://bigdata.kepco.co.kr/cmsmain.do?scode=S01&pcode=000167&pstate=L&redirect=Y"
