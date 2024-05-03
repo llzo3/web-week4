@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, Column, Interger, String
-from squlalchmy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session # type: ignore
+from sqlalchemy import create_engine, Column, Integer, String # type: ignore
+from squlalchmy.ext.declarative import declarative_base # type: ignore
+from sqlalchemy.orm import sessionmaker # type: ignore
 from pydantic import BaseModel
 
 import requests
