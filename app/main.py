@@ -1,12 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException
-from sqlalchemy.orm import Session # type: ignore
-from sqlalchemy import create_engine, Column, Integer, String # type: ignore
-from squlalchmy.ext.declarative import declarative_base # type: ignore
-from sqlalchemy.orm import sessionmaker # type: ignore
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 from pydantic import BaseModel
-
 import requests
-
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///../todo.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
